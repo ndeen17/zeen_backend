@@ -56,7 +56,7 @@ mongoose.set('strictQuery', false);
 
 /* MONGOOSE SETUP */
 
-MONGO_URL="mongodb+srv://nurudeeny17:Rich4ever@cluster0.cknuj9y.mongodb.net/?retryWrites=true&w=majority";
+MONGO_URL= "mongodb+srv://nurudeeny17:Rich4ever@cluster0.cknuj9y.mongodb.net/?retryWrites=true&w=majority";
 
 console.log('MongoDB URL:', process.env.MONGO_URL);
 
