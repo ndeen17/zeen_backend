@@ -55,7 +55,8 @@ app.use("/posts", postRoutes);
 mongoose.set('strictQuery', false);
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 6001;
+console.log('MongoDB URL:', process.env.MONGO_URL);
+
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
