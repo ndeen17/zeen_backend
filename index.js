@@ -55,6 +55,9 @@ app.use("/posts", postRoutes);
 mongoose.set('strictQuery', false);
 
 /* MONGOOSE SETUP */
+
+process.env.MONGO_URL = "mongodb+srv://nurudeeny17:Rich4ever@cluster0.cknuj9y.mongodb.net/?retryWrites=true&w=majority";
+
 const PORT = process.env.PORT || 6001;
 mongoose
   .connect(process.env.MONGO_URL, {
