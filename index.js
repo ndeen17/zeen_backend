@@ -65,18 +65,11 @@ mongoose
     useUnifiedTopology: true,
   })
 
-  .then(async () => {
-    // Drop the unique index on the email field
-    try {
-      await User.collection.dropIndex('email_1');
-      console.log('Unique index on email field dropped successfully.');
-    } catch (error) {
-      console.error('Error dropping unique index:', error.message);
-    }
+  .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD DATA ONE TIME */
-    User.insertMany(users);
-    Post.insertMany(posts);
+     User.insertMany(users);
+     Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
