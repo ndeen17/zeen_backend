@@ -64,7 +64,15 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
+
+  .then(async () => {
+    // Drop the unique index on the email field
+    try {
+      await User.collection.dropIndex('email_1');
+      console.log('Unique index on email field dropped successfully.');
+    } catch (error) {
+      console.error('Error dropping unique index:', error.message);
+    }
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD DATA ONE TIME */
